@@ -6,7 +6,7 @@ const admin = require("firebase-admin");
 const bodyParser = require('body-parser');
 require('dotenv').config()
 
-const port = process.env.PORT || 3333
+const port = process.env.PORT || 5555
 
 const serviceAccount = require('./firebaseKey.json');
 
@@ -17,7 +17,6 @@ admin.initializeApp({
 const app = express()
 app.use(cors());
 app.use(bodyParser.json());
-
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zpujg.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
