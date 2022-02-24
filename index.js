@@ -26,6 +26,7 @@ client.connect(err => {
   const usersCollection = client.db("DoctorsPortal").collection("UserCollection");
   const reviewCollection = client.db("DoctorsPortal").collection("Reviews");
 
+  console.log('db connected');
 
   app.post('/addAppointment', (req, res) => {
     const newAppointment = req.body;
@@ -147,6 +148,5 @@ client.connect(err => {
 
 app.get('/', (req, res) => {
   res.send('Hello Doctors')
-  console.log('db connected')
 })
 app.listen(port)
